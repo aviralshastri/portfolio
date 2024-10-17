@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "POPFINE";
+  src: url("./fonts/POPFINEItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+.POPFINE-bold {
+  font-family: "POPFINE", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+.loader-dot {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side,white 90%,black) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
+
+
+.loader {
+  --s: 40px;
+  
+  --_d: calc(0.353 * var(--s));
+  width: calc(var(--s) + var(--_d));
+  aspect-ratio: 1;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  clip-path: polygon(
+    var(--_d) 0,
+    100% 0,
+    100% calc(100% - var(--_d)),
+    calc(100% - var(--_d)) 100%,
+    0 100%,
+    0 var(--_d)
+  );
+  background: conic-gradient(
+    from -90deg at calc(100% - var(--_d)) var(--_d),
+    #fff7f7 135deg,
+    #d1d1d1 0 270deg,
+    #a1a1a1 0
+  );
+  animation: l6 2s infinite;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l6 {
+  0% {
+    transform: translate(0, 0);
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  25% {
+    transform: translate(75px, 0); 
+  }
+  50% {
+    transform: translate(75px, 75px);
+  }
+  75% {
+    transform: translate(0, 75px); 
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
