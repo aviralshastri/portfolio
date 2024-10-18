@@ -10,7 +10,6 @@ import Link from "next/link";
 import { Twitter } from "lucide-react";
 import { GithubIcon } from "lucide-react";
 import { LinkedinIcon } from "lucide-react";
-import { Globe } from "lucide-react";
 
 export default function Home() {
   const animationRefs = {
@@ -91,14 +90,14 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="hidden sm:flex bg-white min-h-screen flex-col-reverse lg:flex-col space-y-4 lg:space-y-2 p-3 text-white overflow-hidden">
+      <div className="hidden sm:flex bg-white min-h-screen flex-col space-y-4 lg:space-y-2 p-3 text-white overflow-hidden">
         <div
           id="top"
-          className="flex-grow flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3"
+          className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 w-full"
         >
           <div
             id="projects"
-            className="bg-CustomYellow space-x-6 flex-1 flex flex-row items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
+            className="bg-CustomYellow md:w-3/4 space-x-6 flex flex-row items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
           >
             <div ref={animationRefs.projects} className="w-40 h-40" />
             <div>
@@ -109,7 +108,7 @@ export default function Home() {
               </p>
               <div className="hover:translate-y-1 hover:translate-x-1 transition-all duration-300">
                 <Link
-                  href={"/"}
+                  href={"/projects"}
                   className="bg-black text-white border-white border-2 px-6 py-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:shadow-none transition-all duration-300 font-bold text-xl"
                 >
                   Know More
@@ -119,7 +118,7 @@ export default function Home() {
           </div>
           <div
             id="skills"
-            className="bg-CustomBlue flex-1 md:flex-[0.5] flex flex-row items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
+            className="bg-CustomBlue w-full md:w-2/4 flex flex-row items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
           >
             <div ref={animationRefs.skills} className="w-60 h-60" />
             <div>
@@ -130,7 +129,7 @@ export default function Home() {
               </p>
               <div className="hover:translate-y-1 hover:translate-x-1 transition-all duration-300">
                 <Link
-                  href={"/"}
+                  href={"/skills"}
                   className="bg-black text-white border-white border-2 px-6 py-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:shadow-none transition-all duration-300 font-bold text-xl"
                 >
                   Know More
@@ -141,22 +140,24 @@ export default function Home() {
         </div>
         <div
           id="middle"
-          className="flex-grow flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3"
+          className="flex-grow flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 w-full"
         >
           <div
             id="education"
-            className="bg-CustomGreen flex-1 flex flex-col justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
+            className="bg-CustomGreen w-1/4 flex flex-col justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
           >
             <div ref={animationRefs.education} className="w-40 h-40" />
             <div className="mb-10 ml-8">
-              <h2 className="text-3xl font-bold mb-2">Education/Experiences</h2>
+              <h2 className="text-3xl font-bold mb-2 flex flex-wrap">
+                Timeline
+              </h2>
               <p className="mb-4">
                 Information about my academic background and achievements in
                 computer science.
               </p>
               <div className="hover:translate-y-1 hover:translate-x-1 transition-all duration-300">
                 <Link
-                  href={"/"}
+                  href={"/timeline"}
                   className="bg-black text-white border-white border-2 px-6 py-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:shadow-none transition-all duration-300 font-bold text-xl"
                 >
                   Know More
@@ -166,17 +167,17 @@ export default function Home() {
           </div>
           <div
             id="profile"
-            className="bg-CustomBrown flex-1 md:flex-[2] flex flex-col items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
+            className="bg-CustomBrown w-full flex flex-col items-center justify-center border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3"
           >
             <div ref={animationRefs.blogs} className="w-60 h-60" />
             <div className="mb-10">
               <h2 className="text-3xl font-bold mb-2">Aviral Shastri</h2>
-              <p className="text-center font-semibold text-xl mb-4">
+              <p className="font-semibold text-xl mb-4">
                 Get to know more about me, my interests, and my journey in tech.
               </p>
               <div className="hover:translate-y-1 hover:translate-x-1 transition-all duration-300">
                 <Link
-                  href={"/"}
+                  href={"/about"}
                   className="bg-black text-white border-white border-2 px-6 py-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:shadow-none transition-all duration-300 font-bold text-xl"
                 >
                   About Me
@@ -186,7 +187,7 @@ export default function Home() {
           </div>
           <div
             id="contact"
-            className="bg-CustomRed justify-center flex-1 flex flex-col w-full border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3 "
+            className="bg-CustomRed w-1/4 justify-center flex flex-col border-white border-2 shadow-black shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out p-3 "
           >
             <div ref={animationRefs.contactMe} className="w-40 h-40" />
             <div className="mb-8 ml-6">
@@ -196,14 +197,14 @@ export default function Home() {
               </p>
               <div className="hover:translate-y-1 hover:translate-x-1 transition-all duration-300">
                 <Link
-                  href={"/"}
+                  href={"/contact"}
                   className="bg-black text-white border-white border-2 px-6 py-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:shadow-none transition-all duration-300 font-bold text-xl"
                 >
                   Contact
                 </Link>
               </div>
             </div>
-            <div className="ml-6 bg-black px-8 py-2 flex flex-row items-center justify-between space-x-4  border-white border-2 shadow-[7px_7px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-300 ease-in-out">
+            <div className="px-8 py-2 flex flex-row items-center justify-between gap-2">
               <Link
                 href={"https://x.com/AviralShastri"}
                 className="rounded-xl bg-white p-1.5 hover:-translate-y-1 transition-all duration-300 ease-in-out"
