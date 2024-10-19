@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <div>
       {isLoading && (
-        <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
           <div className="loader hidden sm:grid"></div>
           <div className="absolute bottom-0 left-0 p-3 flex flex-row">
             <h1 className="text-white POPFINE-bold text-8xl">LOADING</h1>

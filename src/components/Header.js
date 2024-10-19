@@ -4,6 +4,9 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
+import { Twitter } from "lucide-react";
+
+
 
 const menuItems = [
   { path: "/", label: "Home" },
@@ -102,17 +105,24 @@ const Header = () => {
             transition={{ delay: 0.5 }}
             className="mt-12 flex space-x-6"
           >
-            {socialLinks.map(({ Icon, href }, index) => (
-              <a
-                key={index}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-yellow-300 transition-colors"
-              >
-                <Icon size={32} />
-              </a>
-            ))}
+            <Link
+              href={"https://x.com/AviralShastri"}
+              className="rounded-xl bg-white p-1.5 hover:-translate-y-1 transition-all duration-300 ease-in-out"
+            >
+              <Twitter size={30} color="black" />
+            </Link>
+            <Link
+              href={"https://github.com/aviralshastri"}
+              className="rounded-xl bg-white p-1.5 hover:-translate-y-1 transition-all duration-300 ease-in-out"
+            >
+              <GithubIcon size={30} color="black" />
+            </Link>
+            <Link
+              href={"https://in.linkedin.com/in/aviral-shastri-104944270"}
+              className="rounded-xl bg-white p-1.5 hover:-translate-y-1 transition-all duration-300 ease-in-out"
+            >
+              <LinkedinIcon size={30} color="black" />
+            </Link>
           </motion.div>
         </div>
       </div>
